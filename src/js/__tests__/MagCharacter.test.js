@@ -20,3 +20,17 @@ test('Magician attack distance stoned', () => {
   character.stoned = true;
   expect(character.attack).toBe(72);
 });
+
+test('Magician attack < 0', () => {
+  const character = new Magician('Harry');
+  character.attack = 1;
+  character.distance = 5;
+  character.stoned = true;
+  expect(character.attack).toBe(0);
+});
+
+test('Magician stoned', () => {
+  const character = new Magician('Harry');
+  character.stoned = true;
+  expect(character.stoned).toBe(true);
+});
